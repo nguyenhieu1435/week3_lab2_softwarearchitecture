@@ -129,7 +129,7 @@ public class ProjectHandler {
         }
     }
 
-    // 1.  CÃ¡c package trong dá»± Ã¡n pháº£i theo máº«u: com.companyname.* (*:tÃªn báº¥t ká»³)
+    // 1.  Các package trong dự án phải theo mẫu: com.companyname.* (*:tên bất kỳ)
     public static void handlePackageName(CompilationUnit cu, Object arg, Optional<FileWriter> reportWriterOptional) throws IOException {
         Optional<PackageDeclaration> optional = cu.getPackageDeclaration();
         if (optional.isPresent()) {
@@ -147,8 +147,7 @@ public class ProjectHandler {
 
     }
 
-    // 2. CÃ¡c class pháº£i cÃ³ tÃªn lÃ  má»™t danh tá»« hoáº·c cá»¥m danh ngá»¯ vÃ  pháº£i báº¯t Ä‘áº§u
-    // báº±ng chá»¯ hoa.
+    // 2.Các class phải có tên là một danh từ hoặc cụm danh ngữ và phải bắt đầu bằng chữ hoa.
     public static void handleClassName(ClassOrInterfaceDeclaration n, Object arg, Optional<FileWriter> reportWriterOptional) throws IOException {
         String clsName = n.getNameAsString();
         char firstWord = clsName.charAt(0);
@@ -208,8 +207,8 @@ public class ProjectHandler {
         return stringBuilder.toString();
     }
 
-    //	3.  Má»—i  lá»›p  pháº£i  cÃ³  má»™t  comment  mÃ´  táº£  cho  lá»›p.  Trong  comment  Ä‘Ã³  pháº£i  cÃ³  ngÃ y  táº¡o
-    //	(created-date) vÃ  author.
+    //	3.  Mỗi lớp phải có một comment mô tả cho lớp. Trong comment đó phải có ngày tạo
+    // (created-date) và author
     public static void handleCommentForClass(ClassOrInterfaceDeclaration coid, Object arg, Optional<FileWriter> reportWriterOptional) throws IOException {
         String clsName = coid.getNameAsString();
         Optional<Comment> optional = coid.getComment();
@@ -229,8 +228,8 @@ public class ProjectHandler {
         }
     }
     /*
-        4.  CÃ¡c fields trong cÃ¡c class pháº£i lÃ  danh tá»« hoáº·c cá»¥m danh ngá»¯ vÃ  pháº£i báº¯t Ä‘áº§u báº±ng má»™t
-            chá»¯ thÆ°á»�ng
+        4. Các fields trong các class phải là danh từ hoặc cụm danh ngữ và phải bắt đầu bằng một
+        chữ thường.
      */
     public static void handleFieldName(ClassOrInterfaceDeclaration n, Object args, Optional<FileWriter> reportWriterOptional) throws IOException {
         String clsName = n.getNameAsString();
@@ -273,7 +272,7 @@ public class ProjectHandler {
 
 
     }
-    // 5. Táº¥t cáº£ cÃ¡c háº±ng sá»‘ pháº£i lÃ  chá»¯ viáº¿t hoa vÃ  pháº£i náº±m trong má»™t interface.
+    // 5. Tất cả các hằng số phải là chữ viết hoa và phải nằm trong một interface.
     public static void handleConstField(ClassOrInterfaceDeclaration n, Object arg, Optional<FileWriter> reportWriterOptional) throws IOException{
         String clsName = n.getNameAsString();
         List<FieldDeclaration> fields = n.getFields();
@@ -295,7 +294,7 @@ public class ProjectHandler {
             }
         }
     }
-//    6. TÃªn method pháº£i báº¯t Ä‘áº§u báº±ng má»™t Ä‘á»™ng tá»« vÃ  pháº£i lÃ  chá»¯ thÆ°á»�ng
+//    6. Tên method phải bắt đầu bằng một động từ và phải là chữ thường
     public static void handleMethodName(ClassOrInterfaceDeclaration n, Object arg, Optional<FileWriter> reportWriterOptional) throws IOException {
         String clsName = n.getNameAsString();
         List<MethodDeclaration> methods = n.getMethods();
@@ -330,8 +329,8 @@ public class ProjectHandler {
         }
 
     }
-    // 7. Má»—i method pháº£i cÃ³ má»™t ghi chÃº mÃ´ táº£ cho cÃ´ng viá»‡c cá»§a method trá»« phÆ°Æ¡ng thá»©c
-    //default constructor, accessors/mutators, hashCode, equals, toString
+    // 7. Mỗi method phải có một ghi chú mô tả cho công việc của method trừ phương thức
+    // default constructor, accessors/mutators, hashCode, equals, toString
     public static void handleDocCommentForMethod(ClassOrInterfaceDeclaration n, Object arg, Optional<FileWriter> reportWriterOptional) throws IOException{
         String clsName = n.getNameAsString();
         List<MethodDeclaration> methods = n.getMethods();
