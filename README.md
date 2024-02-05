@@ -1,8 +1,8 @@
 # Bài tập kiểm tra tính hợp lệ của Mã nguồn
 
 ## 🚩 Mục lục
-- [Yêu cầu của bài tập](#yeu-cau-cua-bai-tap) 
-- [Tóm tắt](#tom-tat)
+- [Yêu cầu của bài tập](#yêu-cầu-của-bài-tập) 
+- [Tóm tắt](#tóm-tắt)
 - [Được xây dựng bằng](#duoc-xay-dung-bang)
 - [Các dependency sử dụng](#cac-dependency-su-dung)
 - [Demo Chương trình](#demo-chuong-trinh)
