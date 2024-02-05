@@ -3,9 +3,9 @@
 ## 🚩 Mục lục
 - [Yêu cầu của bài tập](#yêu-cầu-của-bài-tập) 
 - [Tóm tắt](#tóm-tắt)
-- [Được xây dựng bằng](#duoc-xay-dung-bang)
-- [Các dependency sử dụng](#cac-dependency-su-dung)
-- [Demo Chương trình](#demo-chuong-trinh)
+- [Được xây dựng bằng](#được-xây-dựng-bằng)
+- [Các dependency sử dụng](#các-Dependency-sử-dụng)
+- [Demo Chương trình](#demo-Chương-trình)
 
 ## Yêu cầu của bài tập
 
